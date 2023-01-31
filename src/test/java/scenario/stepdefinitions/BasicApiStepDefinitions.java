@@ -25,10 +25,9 @@ public class BasicApiStepDefinitions {
                 AuthRegisterRequest.authRegisterRequestHeaders(), AuthRegisterRequest.authRegisterRequestBody());
     }
 
-    @Then("Data is retrieved")
+    @Then("Status is 200 OK")
     public void dataIsRetrieved(){
         Assert.assertEquals("Status is not 200/OK", HttpStatus.OK, response.getStatus());
-        response.getBody();
     }
 
     @When("I send login request")

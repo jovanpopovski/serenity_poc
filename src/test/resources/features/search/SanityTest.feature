@@ -2,8 +2,8 @@ Feature: Send basic request's
 
   Scenario: Send request to register user
     When I send register request
-    Then Data is retrieved
+    Then Status is 200 OK
 
   Scenario: Send request for login user
     When I send login request
-    Then Data is retrieved
+    Then Status is 200 OK
