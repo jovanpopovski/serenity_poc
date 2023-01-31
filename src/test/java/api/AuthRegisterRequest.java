@@ -18,7 +18,8 @@ public class AuthRegisterRequest {
 
     public static LinkedHashMap<String, Object> authRegisterRequestBody() throws IOException {
         LinkedHashMap<String, Object> requestBody = new LinkedHashMap<>();
-        requestBody.put("username", configFileReader.getProperty("test"));
+        requestBody.put("firstName", configFileReader.getProperty("firstname"));
+        requestBody.put("lastName", configFileReader.getProperty("lastname"));
         requestBody.put("email", configFileReader.getProperty("email"));
         requestBody.put("password", configFileReader.getProperty("password"));
         return requestBody;
