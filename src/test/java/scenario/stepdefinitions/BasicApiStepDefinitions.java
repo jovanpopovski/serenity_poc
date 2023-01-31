@@ -1,5 +1,6 @@
 package scenario.stepdefinitions;
 
+import kong.unirest.HttpStatus;
 import org.junit.Assert;
 import utilities.AuthLoginRequest;
 import utilities.ConfigFileReader;
@@ -26,7 +27,7 @@ public class BasicApiStepDefinitions {
 
     @Then("Data is retrieved")
     public void dataIsRetrieved(){
-        Assert.assertEquals("Status is not correct",200,response.getStatus());
+        Assert.assertEquals("Status is not 200/OK", HttpStatus.OK, response.getStatus());
         response.getBody();
     }
 
