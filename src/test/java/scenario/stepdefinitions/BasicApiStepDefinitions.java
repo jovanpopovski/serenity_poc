@@ -2,10 +2,10 @@ package scenario.stepdefinitions;
 
 import kong.unirest.HttpStatus;
 import org.junit.Assert;
-import utilities.AuthLoginRequest;
+import api.AuthLoginRequest;
 import utilities.ConfigFileReader;
 import utilities.RequestBuilder;
-import utilities.AuthRegisterRequest;
+import api.AuthRegisterRequest;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import kong.unirest.HttpResponse;
