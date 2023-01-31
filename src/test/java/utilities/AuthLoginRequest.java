@@ -10,15 +10,14 @@ public class AuthLoginRequest {
 
     public static Map<String,String> authLoginRequestHeaders() throws IOException {
         Map<String, String> requestHeaders = new HashMap<>();
-        requestHeaders.put("Authorization", configFileReader.getProperty("content.type"));
         requestHeaders.put("Content-Type", configFileReader.getProperty("content.type"));
         return requestHeaders;
     }
 
-    public static LinkedHashMap<String, Object> authLoginRequestBody() {
+    public static LinkedHashMap<String, Object> authLoginRequestBody() throws IOException {
         LinkedHashMap<String, Object> requestBody = new LinkedHashMap<>();
-        requestBody.put("email", "test@eq.com");
-        requestBody.put("password", "password123");
+        requestBody.put("email", configFileReader.getProperty("email"));
+        requestBody.put("password", configFileReader.getProperty("password"));
         return requestBody;
     }
 }
