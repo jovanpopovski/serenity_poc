@@ -1,15 +1,17 @@
 package utilities;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class AuthLoginRequest {
+    static ConfigFileReader configFileReader = new ConfigFileReader();
 
-    public static Map<String,String> authLoginRequestHeaders(){
+    public static Map<String,String> authLoginRequestHeaders() throws IOException {
         Map<String, String> requestHeaders = new HashMap<>();
-        requestHeaders.put("Authorization", "Bearer TEST TOKEN");
-        requestHeaders.put("Content-Type", "application/json");
+        requestHeaders.put("Authorization", configFileReader.getProperty("content.type"));
+        requestHeaders.put("Content-Type", configFileReader.getProperty("content.type"));
         return requestHeaders;
     }
 
