@@ -1,5 +1,6 @@
 package utilities;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -15,10 +16,10 @@ public class DriverManager {
         browser = configFileReader.getProperty("browser");
         if (driver == null) {
             if (browser.equalsIgnoreCase("chrome")) {
-                System.setProperty("webdriver.chrome.driver", "/path/to/chromedriver");
+                WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver();
             } else if (browser.equalsIgnoreCase("firefox")) {
-                System.setProperty("webdriver.gecko.driver", "/path/to/geckodriver");
+                WebDriverManager.firefoxdriver().setup();
                 driver = new FirefoxDriver();
             } else {
                 throw new IllegalStateException("Invalid browser type. Please specify either 'chrome' or 'firefox'.");
