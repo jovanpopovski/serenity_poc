@@ -26,9 +26,15 @@ public class BasicApiStepDefinitions {
     }
 
     @Then("Status is 200 OK")
-    public void dataIsRetrieved(){
+    public void statusIs200(){
         Assert.assertEquals("Status is not 200/OK", HttpStatus.OK, response.getStatus());
     }
+
+    @Then("Status is 201 Created")
+    public void statusIs201(){
+        Assert.assertEquals("Status is not 201/Created", HttpStatus.CREATED, response.getStatus());
+    }
+
 
     @When("I send login request")
     public void iSendLoginRequest() throws IOException {
